@@ -1,8 +1,8 @@
       *****************************************************************
       * Title..........: RPT3000 - Future Value Calculator
-      * Programmer.....: Ben Stearns and Aidan Dunbar
-      * Date...........: 3-19-26
-      * GitHub URL.....: https://github.com/bstearns07/RPT3000
+      * Programmer.....: Aidan Dunbar
+      * Date...........: 3-31-26
+      * GitHub URL.....: https://github.com/ADunbar5612/RPT5000
       * Program Desc...: Generates a sales report for customers based
       *                  on YTD and percent change from last year
       * File Desc......: Define the sole source code for application
@@ -68,7 +68,7 @@
        01  CONTROL-FIELDS.
            05  OLD-SALESREP-NUMBER   PIC 99.
            05  OLD-BRANCH-NUMBER     PIC 99.
-           
+
 
       * Controls spacing on the report and when to print heading lines
        01  PRINT-FIELDS.
@@ -294,8 +294,8 @@
                      WHEN OTHER
                          PERFORM 320-PRINT-CUSTOMER-LINE
                 END-EVALUATE.
-          
-          
+
+
        310-READ-CUSTOMER-RECORD.
 
            READ INPUT-CUSTMAST
@@ -311,7 +311,7 @@
 
            IF LINE-COUNT >= LINES-ON-PAGE
                PERFORM 330-PRINT-HEADING-LINES.
-               
+
            IF FIRST-RECORD OR CM-BRANCH-NUMBER > OLD-BRANCH-NUMBER
                MOVE CM-BRANCH-NUMBER TO CL-BRANCH-NUMBER
                MOVE CM-SALESREP-NUMBER TO CL-SALESREP-NUMBER
@@ -321,8 +321,8 @@
                    MOVE CM-SALESREP-NUMBER TO CL-SALESREP-NUMBER
                ELSE
                    MOVE SPACE TO CL-SALESREP-NUMBER.
-        
-           
+
+
            MOVE CM-CUSTOMER-NUMBER  TO CL-CUSTOMER-NUMBER.
            MOVE CM-CUSTOMER-NAME    TO CL-CUSTOMER-NAME.
            MOVE CM-SALES-THIS-YTD   TO CL-SALES-THIS-YTD.
