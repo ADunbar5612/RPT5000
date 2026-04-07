@@ -1,93 +1,107 @@
 📊 RPT5000 – COBOL Sales Report Generator (Enhanced)
+👨‍💻 Author
 
-👨‍💻 Authors
 Aidan Dunbar
 
-📅 Date: 03/31/2026
+📅 Date
 
-🔗 GitHub Repository:
+March 31, 2026
+
+🔗 Repository
+
 https://github.com/ADunbar5612/RPT5000
 
 📌 Overview
 
-RPT5000 is an enhanced COBOL reporting program based on RPT3000. It processes a customer master file and produces a structured Year-To-Date (YTD) sales report with multi-level control breaks.
+RPT5000 is an enhanced COBOL reporting program built upon the foundation of RPT3000. It processes a customer master file to generate a structured Year-To-Date (YTD) sales report featuring multi-level control break logic.
 
-🆕 New Features
-🧑‍💼 Sales Representative (SALESREP) control break
-🏢 Branch-level totals (existing)
-🌐 Grand totals across all data
-🔄 Improved control logic using switches and structured conditions
-⚙️ How It Works
+The program emphasizes clean structure, accurate aggregation, and readable report formatting, making it ideal for learning advanced COBOL reporting techniques.
+
+🆕 Key Enhancements
+🧑‍💼 Added Sales Representative (SALESREP) control break
+🏢 Improved branch-level total calculations
+🌐 Implemented grand total accumulation across all records
+🔄 Refined control flow using structured logic and switches
+🧠 Improved maintainability with EVALUATE-based decision handling
+⚙️ Program Workflow
 🚀 Initialization
 Opens input and output files
-Retrieves system date and time
-Initializes control fields and switches
-Sets up report headings (updated to RPT5000)
+Retrieves current system date and time
+Initializes control fields and working storage
+Sets up report headings (updated to reflect RPT5000)
 🔄 Record Processing
 
-For each customer record:
+For each customer record, the program:
 
 Reads input data
 Detects control breaks:
-🧑‍💼 SALESREP change
-🏢 BRANCH change
+🧑‍💼 SALESREP changes
+🏢 BRANCH changes
 Performs calculations:
-💲 Change Amount = This YTD − Last YTD
-📊 Change Percent = (Change / Last YTD) × 100
+💲 Change Amount = Current YTD − Previous YTD
+📊 Change Percent = (Change ÷ Previous YTD) × 100
 🔁 Control Break Logic
 🧑‍💼 SALESREP Break
-Triggered when SALESREP changes
+
+Triggered when the Sales Representative changes:
+
 Prints SALESREP total line
-Resets SALESREP totals
+Resets SALESREP accumulators
 🏢 BRANCH Break
-Triggered when BRANCH changes
-Prints:
-SALESREP totals (if needed)
-BRANCH totals
-Resets both SALESREP and BRANCH totals
+
+Triggered when the Branch changes:
+
+Prints pending SALESREP totals (if applicable)
+Prints BRANCH totals
+Resets both SALESREP and BRANCH accumulators
 ⚠️ Edge Case Handling
-If Last YTD = 0:
+If Previous YTD = 0:
 Percentage is set to 999.9 to prevent division errors
 🖨️ Output Generation
-Prints:
+
+The program produces a formatted report including:
+
 Customer detail lines
-SALESREP totals
-BRANCH totals
-Grand totals
-Uses formatted fields and alignment for readability
-🧾 Report Structure
-
-The report includes:
-
-📄 Header with program name (RPT5000)
-📋 Customer detail lines
-🧑‍💼 SALESREP total lines
-🏢 BRANCH total lines
+SALESREP summary lines
+BRANCH summary lines
 📊 Grand total summary
 
-Each total level is clearly marked with * for visual separation.
+All sections are clearly labeled and visually separated using * markers for readability.
 
-🧠 Key Enhancements
-🧩 Working Storage Updates
+🧾 Report Structure
+
+The generated report includes:
+
+📄 Header (Program title: RPT5000)
+📋 Customer detail records
+🧑‍💼 SALESREP totals
+🏢 BRANCH totals
+📊 Grand totals
+🧠 Technical Improvements
+🧩 Working Storage Enhancements
+
 Added:
+
 OLD-SALESREP-NUMBER (control field)
-SALESREP total accumulators
+SALESREP-level accumulators
+
 Modified:
+
 CUSTOMER-LINE to include SALESREP (PIC X(2))
-HEADING-LINE-2 updated to reflect RPT5000
-🔀 Logic Improvements
-Introduced switch conditions for cleaner control flow
-Replaced some IF-ELSE logic with EVALUATE statements
-Added new paragraph:
+HEADING-LINE-2 updated for RPT5000
+🔀 Logic Refinements
+Introduced switch-based control logic for clarity
+Replaced nested IF statements with EVALUATE constructs
+Added modular paragraph:
 355-PRINT-SALESREP-LINE
-🧮 Totals Handling
-SALESREP totals calculated separately from BRANCH totals
-Proper reset logic implemented at each control break
-Grand totals accumulated across all records
-📁 Files
-📄 File Name	📌 Description
+🧮 Totals Management
+SALESREP totals handled independently from BRANCH totals
+Proper reset logic at each control break level
+Grand totals accumulated across all processed records
+📁 Project Files
+File Name	Description
 RPT5000.cbl	Enhanced COBOL source program
-JCLRPT5.jcl	JCL to compile and execute program
+JCLRPT5.jcl	JCL for compilation and execution
 README.md	Project documentation
 📝 Notes
 🎓 Designed for educational purposes
@@ -96,4 +110,4 @@ Multi-level control break processing
 Advanced COBOL report formatting
 Structured programming techniques
 Use of switches and EVALUATE statements
-⚙️ Some values may be hardcoded for demonstration
+⚙️ Some values are intentionally hardcoded for demonstration and learning clarity
