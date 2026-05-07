@@ -37,8 +37,6 @@
   | `RPT5000.cbl` | Enhanced COBOL source program |
   | `JCLRPT5.jcl` | JCL for compilation and execution |
   | `README.md` | Project documentation |
-- **Thumbnail Screenshot:**
-  > `![RPT5000 Screenshot](assets/rpt5000-thumbnail.png)`
-- **Repository Link:** [View RPT5000 on GitHub](https://github.com/ADunbar5612/RPT5000)
+
 
 [🔼 Back to TOC](#table-of-contents)
