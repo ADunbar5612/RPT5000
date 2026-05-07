@@ -1,7 +1,7 @@
 ---
 
 ### RPT5000
-**COBOL Sales Report Generator (Enhanced)**
+**COBOL Sales Report Generator
 👤 Author: [Aidan Dunbar](https://github.com/ADunbar5612) | 📅 Date: March 31, 2026
 🔗 [GitHub Repository](https://github.com/ADunbar5612/RPT5000)
 
